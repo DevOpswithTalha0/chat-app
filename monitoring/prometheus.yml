@@ -1,0 +1,23 @@
+global:
+  scrape_interval: 15s  # How often to scrape targets
+
+scrape_configs:
+  # Scrape Prometheus itself
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # Scrape Docker container metrics (via cAdvisor)
+  - job_name: 'cadvisor'
+    static_configs:
+      - targets: ['cadvisor:8080']
+
+  # Scrape Node Exporter metrics (CPU, RAM, etc.)
+  - job_name: 'node_exporter'
+    static_configs:
+      - targets: ['node-exporter:9100']
+
+  # Scrape backend API metrics (if you expose them)
+  - job_name: 'backend'
+    static_configs:
+      - targets: ['backend:5000']
