@@ -17,7 +17,25 @@ dist
 # Logs
 *.log
 
+# Git
+.git
+.gitignore
+
+# Docker files
+Dockerfile
+.dockerignore
+
 # OS / Editor files
 .DS_Store
 .vscode
 .idea
+
+# Tests
+coverage
+__tests__
+*.test.js
+*.spec.js
+
+# Temp
+.tmp
+.cache
