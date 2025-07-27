@@ -14,15 +14,6 @@ services:
     networks:
       - chatnet
 
-  frontend:
-    build: ./frontend
-    container_name: frontend
-    restart: always
-    command: sh -c "npm run build"
-    networks:
-      - chatnet
-    volumes:
-      - ./frontend/build:/frontend_build
 
   nginx:
     image: nginx:latest
